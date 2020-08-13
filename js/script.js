@@ -112,8 +112,9 @@ function register(){
 
     // clear the inputs
     clear();
-    display();
+ //   display();  // directory.js
     numberOfPets();
+    displayTable(thePet)
 }
 
 function numberOfPets(){
@@ -134,7 +135,7 @@ function clear(){
 }
 
 // display on the console the oldest pet and the youngest pet
-
+/*
 let petAges = [];
 
 for(let i = 0; i < salon.pets.length; i++){
@@ -154,9 +155,30 @@ for(let i = 0; i < salon.pets.length; i++){
         }
 
 }
-
+*/
 
 // add css to the form
 // done using 'float: right;'
 
 // display number of pets, when changed, update #of pets
+// in directory.js
+
+function displayTable(aPet){
+    var row =   `<tr>
+                    <td>${aPet.name}</td>
+                    <td>${aPet.age}</td>
+                    <td>${aPet.type}</td>
+                    <td>${aPet.breed}</td>
+                    <td>${aPet.gender}</td>
+                    <td>${aPet.service}</td>
+                    <td>${aPet.ownersName}</td>
+                    <td>${aPet.ownersAddress}</td>
+                    <td>${aPet.phone}</td>
+                </tr>`;
+    var tbody = document.getElementById('rowPet');
+    tbody.innerHTML = row;
+}
+
+
+displayTable(scooby);
+displayTable(scrappy);

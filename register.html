@@ -10,15 +10,22 @@
     </head>
 <body>
     <header>
+        <img id="logo" class="icon" src="img/calico-cat.jpg" alt="photo of cat">
         <h1 class="display-3">The Fashion Pet</h1>
     </header>
 
     <section>
-        <nav class="menu">
+        <nav id="menu1" class="menu">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="register.html" onclick="numberOfPets()">Register</a>
+        </nav>
+        <nav id="menu2" class="menu">
+            <a href="index.html">Home2</a>
+            <a href="about.html">About2</a>
+            <a href="services.html">Services2</a>
+            <a href="register.html" onclick="numberOfPets()">Register2</a>
         </nav>
     </section>
 
@@ -96,11 +103,30 @@
     <section id="typesOfPets">
         
     </section>
-
+    <!-- Works with directory.js
     <section id="pets">
         
     </section>
+    -->
 
+    <table class="table">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Type</th>
+            <th>Breed</th>
+            <th>Gender</th>
+            <th>Service</th>
+            <th>Owner Name</th>
+            <th>Owner Address</th>
+            <th>Contact Phone</th>
+        </thead>
+        <tbody id="rowPet">
+
+        </tbody>
+
+    </table>
+    
     <footer>
         <div id="info">
             
@@ -109,7 +135,9 @@
 
     <!-- <script src="js/script.js"></script> -->
     <script src="js/script.js"></script>
-    <script src="js/directory.js"></script>
+   <!-- <script src="js/directory.js"></script> -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/test5.js"></script>
 
 </body>
 </html>
