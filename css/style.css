@@ -635,3 +635,17 @@ input, select{
 #bronze{
   background-color: rgb(184, 133, 100);
 }
+
+/* About Page */
+
+.active{
+  border: 1px solid #d4c70b;
+}
+
+.red-bg{
+  background-color: red; 
+}
+
+#catLogo{
+  max-width: 200px;
+}

@@ -29,6 +29,7 @@ document.getElementById('info').innerHTML=`
 
 
 //object constructor for the pets
+var c = 1;
 class Pet{
     constructor(name,age,type,breed,gender,service,ownersName,ownersAddress,contactPhone){
         this.name=name;
@@ -40,6 +41,8 @@ class Pet{
         this.ownersName=ownersName;
         this.ownersAddress=ownersAddress;
         this.contactPhone=contactPhone;
+        this.id=c;
+        c++;
     }
 }
 
@@ -164,7 +167,7 @@ for(let i = 0; i < salon.pets.length; i++){
 // in directory.js
 
 function displayTable(aPet){
-    var row =   `<tr>
+    var row =   `<tr id=${aPet.id}>
                     <td>${aPet.name}</td>
                     <td>${aPet.age}</td>
                     <td>${aPet.type}</td>
@@ -174,11 +177,56 @@ function displayTable(aPet){
                     <td>${aPet.ownersName}</td>
                     <td>${aPet.ownersAddress}</td>
                     <td>${aPet.phone}</td>
+                    <td><button type="button" onclick="delPet(${aPet.id})">Delete</button></td>
                 </tr>`;
     var tbody = document.getElementById('rowPet');
-    tbody.innerHTML = row;
+    tbody.innerHTML += row;
+
 }
+
 
 
 displayTable(scooby);
 displayTable(scrappy);
+displayTable(spoodli);
+displayTable(lola);
+
+function delPet(petID){
+    // select element to delete
+    var tr = $('#'+petID);
+    var indexDelete; // important! have to know position 
+    // travel array 
+    for(var i=0; i < salon.pets.length; i++){
+        var selected = salon.pets[i];
+        if(selected.id === petID){
+            indexDelete=i;
+        }
+    }
+    // delete pet from array
+    salon.pets.splice(indexDelete,1);
+    // delete pet from array
+    tr.remove();
+    numberOfPets();
+}
+
+// search for name and service - HW
+
+function searchPetsName(){
+    var ss = $('#petSearch').val(); // val = value
+    var searchString = ss.toLowerCase();
+    for(var h=0; h < salon.pets.length; h++){
+        var selected = salon.pets[h];
+        if(selected.name.toLowerCase() === searchString){
+            console.log('found it');
+            $("#"+selected.id).addClass('red-bg active');
+            break
+        }else if(selected.id === parseInt(searchString)){
+            console.log('Found by ID')
+            $("#"+selected.id).addClass('red-bg active');
+            break
+        }else{
+            console.log('nope');
+        }
+    }
+}
+

@@ -10,7 +10,7 @@
     </head>
 <body>
     <header>
-        <img id="logo" class="icon" src="img/calico-cat.jpg" alt="photo of cat">
+<!--        <img id="logo" class="icon" src="img/calico-cat.jpg" alt="photo of cat">-->
         <h1 class="display-3">The Fashion Pet</h1>
     </header>
 
@@ -100,6 +100,11 @@
 
     </section>
 
+    <SECTION id="pet-search" class="container table-container">
+        <input class="form-control" type="search" name="search" id="petSearch" placeholder="Enter Pet Name or ID">
+        <button class="btn btn-primary" onclick="searchPetsName()">Search</button>
+    </SECTION>
+
     <section id="typesOfPets">
         
     </section>
@@ -120,6 +125,7 @@
             <th>Owner Name</th>
             <th>Owner Address</th>
             <th>Contact Phone</th>
+            <th>Delete A Pet</th>
         </thead>
         <tbody id="rowPet">
 
